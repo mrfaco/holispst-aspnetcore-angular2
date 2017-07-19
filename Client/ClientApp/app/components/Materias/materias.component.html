@@ -1,0 +1,27 @@
+﻿<h1>List of items</h1>
+
+<p *ngIf="!materias"><em>Loading...</em></p>
+
+<table class='table table-hover' *ngIf="materias">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Date modified</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mat of materias; let i=index" (click)="setClickedRow(i)" [class.active]="i == selectedRow">
+                <td>{{ mat.id }}</td>
+                <td>{{ mat.name }}</td>
+                <td>{{ mat.price }}</td>
+                <td>{{ mat.stock}}</td>
+                <td>{{ mat.dateModified}}</td>
+        </tr>
+    </tbody>
+</table>
+<creator (onUpdated)="onUpdated(true)" *ngIf="!isSelected"></creator>
+<updater (onUpdated)="onUpdated($event)" *ngIf ="isSelected && selectedMateria" [materiaInput]="selectedMateria"></updater>
+

@@ -1,0 +1,7 @@
+c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\bin\Debug\netcoreapp1.1\Entities.deps.json
+c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\bin\Debug\netcoreapp1.1\Entities.dll
+c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\bin\Debug\netcoreapp1.1\Entities.pdb
+c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\obj\Debug\netcoreapp1.1\Entities.AssemblyInfo.cs
+c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\obj\Debug\netcoreapp1.1\Entities.dll
+c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\obj\Debug\netcoreapp1.1\Entities.pdb
+C:\Users\facundo.osimi\documents\visual studio 2017\Projects\holispst\Entities\obj\Debug\netcoreapp1.1\Entities.csprojResolveAssemblyReference.cache

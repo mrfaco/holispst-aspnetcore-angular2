@@ -1,0 +1,28 @@
+﻿<form #updateForm="ngForm" (ngSubmit)="update(updateForm.value)" class="form-horizontal">
+    <fieldset>
+        <legend>Update</legend>
+        <div class="alert alert-success" *ngIf="updated">
+            <strong>Updated!</strong>
+        </div>
+        <div class="input-group input-group-sm">
+            <label class="control-label" for="name">Id</label>
+            <input [(value)]="materiaInput.id" (ngModel)="id" name="id" class="form-control input-sm" type="text" id="inputSmall" [disabled]="true">
+        </div>
+        <div class="input-group input-group-sm">
+            <label class="control-label" for="name">Name</label>
+            <input [(value)]="materiaInput.name" (ngModel)="name" name="name" class="form-control input-sm" type="text" id="inputSmall">
+        </div>
+        <div class="input-group input-group-sm">
+            <label class="control-label" for="price">Price</label>
+            <input [(value)]="materiaInput.price" (ngModel)="price" name="price" class="form-control input-sm" type="text" id="inputSmall">
+        </div>
+        <div class="input-group input-group-sm">
+            <label class="control-label" for="stock">Stock</label>
+            <input [(value)]="materiaInput.stock" (ngModel)="stock" name="stock" class="form-control input-sm" type="text" id="inputSmall">
+        </div>
+        <div class="btn-group btn-group-sm separado">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" (click)="deleteSelected()" class ="btn btn-danger">Delete</button>
+        </div>
+    </fieldset>
+</form>
