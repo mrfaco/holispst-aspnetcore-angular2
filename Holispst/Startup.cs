@@ -45,7 +45,6 @@ namespace Holispst
 
             services.AddScoped<IMateriasRepository, MateriasRepository>();
 
-            
             services.AddLogging();
         }
 

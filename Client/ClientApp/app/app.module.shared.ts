@@ -5,11 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './components/app/app.component'
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
 import { MateriaComponent } from './components/Materias/materias.component';
 import { CreatorComponent } from './components/creator/creator.component';
 import { UpdaterComponent } from './components/updater/updater.component'
+import { CalculatorComponent } from "./components/calculator/calculator.component";
 
 
 
@@ -18,19 +17,17 @@ export const sharedConfig: NgModule = {
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
-        FetchDataComponent,
         HomeComponent,
         MateriaComponent,
         CreatorComponent,
         UpdaterComponent,
+        CalculatorComponent
     ],
     imports: [
         FormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
+            { path: '', redirectTo: 'calculator', pathMatch: 'full' },
+            { path: 'calculator', component: CalculatorComponent },
             { path: 'materias', component: MateriaComponent },
             { path: '**', redirectTo: 'home' }
         ])

@@ -1,0 +1,53 @@
+﻿<h1>List of items</h1>
+
+<p *ngIf="!materias"><em>Loading...</em></p>
+
+<table class='table table-hover' *ngIf="materias">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Date modified</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mat of materias; let i=index" (click)="setClickedRow(i)" [class.active]="this.materias[i].selected">
+            <td>{{ mat.id }}</td>
+            <td>{{ mat.name }}</td>
+            <td>{{ mat.price }}</td>
+            <td>{{ mat.stock}}</td>
+            <td>{{ mat.dateModified | date: 'dd/MM/yyyy hh:mm:ss'}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="btn btn-success" (click)="calculateTotal()">Calculate</div><br />
+<div class="panel panel-default">
+    <div class="panel-heading">Total</div>
+    <div class="panel-body">
+        <label class="text-primary">{{price}}</label>
+    </div>
+</div>
+
+
+<div class="form-inline">
+    <div class="input-group input-group-sm" *ngFor="let mat of selectedMaterias; let i=index">
+        <div class="panel panel-primary ">
+            <div class="panel-heading" style="border:10px">
+                <h3 class="panel-title">{{mat.name}}</h3>
+            </div>
+            <div class="panel-body col-md-3">
+                <label class="control-label" for="price">Id</label><br />
+                <input required type="number" [(value)]="mat.id" name="id" class="form-control input-sm" [disabled]="true" />
+                <label class="control-label" for="price">Price</label><br />
+                <input required type="number" [(value)]="mat.price" name="price" class="form-control input-sm" />
+                <label class="control-label" for="price">Stock</label><br />
+                <input required type="number" [(value)]="mat.stock" name="stock" class="form-control input-sm" />
+                <label class="control-label" for="price">Quantity</label><br />
+                <input required type="number" [(ngModel)]="selectedMaterias[i].quantity"  name="quantity" class="form-control input-sm" />
+            </div>
+        </div>
+    </div>
+</div>
