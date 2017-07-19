@@ -9,19 +9,23 @@
             <input [value]="materiaInput.id" [(ngModel)]="_materiaInput.id" name="id" class="form-control input-sm" type="text" [disabled]="true" />
         </div>
         <div class="input-group input-group-sm">
-            <label class="control-label" for="name">Name</label>
-            <input required type="text" [value]="materiaInput.name" [(ngModel)]="_materiaInput.name" name="name" class="form-control input-sm" type="text"/>
+            <label class="control-label" for="name">Name</label><br/>
+            <span class="text-danger small" *ngIf="updateForm.controls.name?.invalid">Required</span>
+            <input required type="text" [value]="materiaInput.name" [(ngModel)]="_materiaInput.name" name="name" class="form-control input-sm"/>
+            
         </div>
         <div class="input-group input-group-sm">
-            <label class="control-label" for="price">Price</label>
-            <input required type="number" [value]="materiaInput.price" [(ngModel)]="_materiaInput.price" name="price" class="form-control input-sm" type="text"/>
+            <label class="control-label" for="price">Price</label><br />
+            <span class="text-danger small" *ngIf="updateForm.controls.price?.invalid">Required</span>
+            <input required type="number" [value]="materiaInput.price" [(ngModel)]="_materiaInput.price" name="price" class="form-control input-sm"/>
         </div>
         <div class="input-group input-group-sm">
-            <label class="control-label" for="stock">Stock</label>
-            <input required type="number" [value]="materiaInput.stock" [(ngModel)]="_materiaInput.stock" name="stock" class="form-control input-sm" type="text"/>
+            <label class="control-label" for="stock">Stock</label><br />
+            <span class="text-danger small" *ngIf="updateForm.controls.stock?.invalid">Required</span>
+            <input required type="number" [value]="materiaInput.stock" [(ngModel)]="_materiaInput.stock" name="stock" class="form-control input-sm"/>
         </div>
         <div class="btn-group btn-group-sm separado">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="updateForm.invalid">Submit</button>
             <button type="button" (click)="deleteSelected()" class ="btn btn-danger">Delete</button>
         </div>
     </fieldset>

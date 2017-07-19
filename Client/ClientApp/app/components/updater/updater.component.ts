@@ -27,6 +27,32 @@ export class UpdaterComponent {
         this.http = http;
     }
 
+    updateSelected() {
+
+        let mat =
+            {
+                'Id': this.materiaInput.Id,
+                'Name': this.materiaInput.name,
+                'Price': this.materiaInput.price,
+                'Stock': this.materiaInput.stock,
+                'DateModified': Date.now()
+            };
+        console.log(mat);
+        this.postToApi(<Materia>mat)
+            .subscribe(
+            data => {
+                console.log(data);
+                this.updated = true;
+                this.onUpdated.emit(true);
+                return true
+            },
+            error => {
+                console.error("error");
+                return Observable.throw(error);
+            }
+            );
+    }
+
     deleteSelected() {
         this.deleteFromApi(this.materiaInput.id)
             .subscribe(

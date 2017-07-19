@@ -5,19 +5,22 @@
             <strong>Added!</strong>
         </div>
         <div class="input-group input-group-sm">
-            <label class="control-label" for="name">Name</label>
-            <input (ngModel)="name" name="name" class="form-control input-sm" type="text" id="inputSmall">
+            <label class="control-label" for="name">Name</label><br />
+            <span class="text-danger small" *ngIf="addForm.controls.name?.invalid">Required</span>
+            <input required (ngModel)="name" name="name" class="form-control input-sm" type="text" id="inputSmall">
         </div>
         <div class="input-group input-group-sm">
-            <label class="control-label" for="price">Price</label>
-            <input (ngModel)="price" name="price" class="form-control input-sm" type="text" id="inputSmall">
+            <label class="control-label" for="price">Price</label><br />
+            <span class="text-danger small" *ngIf="addForm.controls.price?.invalid">Required</span>
+            <input required (ngModel)="price" name="price" class="form-control input-sm" type="number" id="inputSmall">
         </div>
         <div class="input-group input-group-sm">
-            <label class="control-label" for="stock">Stock</label>
-            <input (ngModel)="stock" name="stock" class="form-control input-sm" type="text" id="inputSmall">
+            <label class="control-label" for="stock">Stock</label><br />
+            <span class="text-danger small" *ngIf="addForm.controls.stock?.invalid">Required</span>
+            <input required (ngModel)="stock" name="stock" class="form-control input-sm" type="number" id="inputSmall">
         </div>
         <div class="btn-group btn-group-sm separado">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Submit</button>
         </div>
     </fieldset>
 </form>
