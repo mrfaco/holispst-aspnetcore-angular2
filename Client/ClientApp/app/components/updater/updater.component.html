@@ -5,20 +5,20 @@
             <strong>Updated!</strong>
         </div>
         <div class="input-group input-group-sm">
-            <label class="control-label" for="name">Id</label>
-            <input [(value)]="materiaInput.id" (ngModel)="id" name="id" class="form-control input-sm" type="text" id="inputSmall" [disabled]="true">
+            <label class="control-label" for="id">Id</label>
+            <input [value]="materiaInput.id" [(ngModel)]="_materiaInput.id" name="id" class="form-control input-sm" type="text" [disabled]="true" />
         </div>
         <div class="input-group input-group-sm">
             <label class="control-label" for="name">Name</label>
-            <input [(value)]="materiaInput.name" (ngModel)="name" name="name" class="form-control input-sm" type="text" id="inputSmall">
+            <input required type="text" [value]="materiaInput.name" [(ngModel)]="_materiaInput.name" name="name" class="form-control input-sm" type="text"/>
         </div>
         <div class="input-group input-group-sm">
             <label class="control-label" for="price">Price</label>
-            <input [(value)]="materiaInput.price" (ngModel)="price" name="price" class="form-control input-sm" type="text" id="inputSmall">
+            <input required type="number" [value]="materiaInput.price" [(ngModel)]="_materiaInput.price" name="price" class="form-control input-sm" type="text"/>
         </div>
         <div class="input-group input-group-sm">
             <label class="control-label" for="stock">Stock</label>
-            <input [(value)]="materiaInput.stock" (ngModel)="stock" name="stock" class="form-control input-sm" type="text" id="inputSmall">
+            <input required type="number" [value]="materiaInput.stock" [(ngModel)]="_materiaInput.stock" name="stock" class="form-control input-sm" type="text"/>
         </div>
         <div class="btn-group btn-group-sm separado">
             <button type="submit" class="btn btn-primary">Submit</button>

@@ -41,9 +41,7 @@ export class MateriaComponent {
             console.log(this.materias.toString());
         });
     }
-
     
-
 }
 
 interface Materia {

@@ -16,7 +16,7 @@ export class UpdaterComponent {
 
     @Input()
     set materiaInput(inp: any) {
-        this._materiaInput = inp;
+        this._materiaInput = Object.assign({},inp);
         this.updated = false;
     }
     get materiaInput() {
@@ -25,9 +25,6 @@ export class UpdaterComponent {
 
     constructor(http: Http) {
         this.http = http;
-    }
-
-    ngOnInit() {
     }
 
     deleteSelected() {

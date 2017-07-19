@@ -18,10 +18,10 @@
                 <td>{{ mat.name }}</td>
                 <td>{{ mat.price }}</td>
                 <td>{{ mat.stock}}</td>
-                <td>{{ mat.dateModified}}</td>
+                <td>{{ mat.dateModified | date: 'dd/MM/yyyy hh:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>
-<creator (onUpdated)="onUpdated(true)" *ngIf="!isSelected"></creator>
+<creator (onUpdated)="onUpdated($event)" *ngIf="!isSelected"></creator>
 <updater (onUpdated)="onUpdated($event)" *ngIf ="isSelected && selectedMateria" [materiaInput]="selectedMateria"></updater>
 

@@ -1,4 +1,4 @@
-﻿import { Component, Inject } from '@angular/core';
+﻿import { Component, Inject, EventEmitter, Output } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 import 'rxjs/Rx';
@@ -12,6 +12,7 @@ export class CreatorComponent {
 
     private http: Http;
     public added = false;
+    @Output() onUpdated = new EventEmitter<boolean>();
 
     constructor(http: Http) {
         this.http = http;
@@ -31,6 +32,7 @@ export class CreatorComponent {
             data => {
                 console.log(data);
                 this.added = true;
+                this.onUpdated.emit(true);
                 return true
             },
             error => {
