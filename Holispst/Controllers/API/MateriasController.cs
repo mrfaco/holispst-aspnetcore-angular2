@@ -1,5 +1,6 @@
 ﻿using DataAccess.Repositories;
 using Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Holispst.Controllers.API
 {
+    
     public class MateriasController : Controller
     {
         private IMateriasRepository materiasRepository;
@@ -16,7 +18,7 @@ namespace Holispst.Controllers.API
         {
             this.materiasRepository = materiasRepository;
         }
-
+        
         [HttpGet]
         [Route("/api/materias")]
         public IActionResult Get()

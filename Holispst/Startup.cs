@@ -39,7 +39,9 @@ namespace Holispst
                 config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
 
-            services.AddSingleton(Configuration);
+            services.AddSingleton<IConfigurationRoot>(Configuration);
+
+            services.AddDbContext<MateriaContext>(builder => builder.UseSqlite(Configuration["ConnectionStrings:MateriasContext"]));
 
             services.AddScoped<IMateriaContext, MateriaContext>();
 
