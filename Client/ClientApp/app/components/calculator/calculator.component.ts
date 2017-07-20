@@ -18,7 +18,7 @@ export class CalculatorComponent {
 
     constructor(http: Http) {
         this.http = http;
-        http.get("http://localhost:55075/api/materias").subscribe(result => {
+        http.get("http://holispst.azurewebsites.net/api/materias").subscribe(result => {
             this.materias = result.json() as Materia[];
             console.log(this.materias.toString());
         });

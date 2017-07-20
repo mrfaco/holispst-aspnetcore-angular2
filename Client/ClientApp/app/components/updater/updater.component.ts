@@ -99,7 +99,7 @@ export class UpdaterComponent {
     deleteFromApi(id: number) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http.delete("http://localhost:55075/api/materias/"+id,options)
+        return this.http.delete("http://holispst.azurewebsites.net/api/materias/"+id,options)
             .map((res: Response) => res.text());
     }
 
@@ -108,7 +108,7 @@ export class UpdaterComponent {
         let options = new RequestOptions({ headers: headers });
         let body = JSON.stringify([mat]);
         console.log(body);
-        return this.http.put('http://localhost:55075/api/materias', body, options)
+        return this.http.put('http://holispst.azurewebsites.net/api/materias', body, options)
             .map((res: Response) => res.text());
     }
 }

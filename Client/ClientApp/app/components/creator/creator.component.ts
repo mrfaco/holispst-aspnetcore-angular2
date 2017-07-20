@@ -47,7 +47,7 @@ export class CreatorComponent {
         let options = new RequestOptions({ headers: headers });
         let body = JSON.stringify([mat]);
         console.log(body);
-        return this.http.post('http://localhost:55075/api/materias', body, options)
+        return this.http.post('http://holispst.azurewebsites.net/api/materias', body, options)
             .map((res: Response) => res.text());
     }
 }
