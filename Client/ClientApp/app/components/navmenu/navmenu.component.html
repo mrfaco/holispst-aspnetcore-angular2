@@ -7,7 +7,7 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]="['/home']">Client</a>
+            <a class='navbar-brand' [routerLink]="['/home']">HolistiShop</a>
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse'>
@@ -20,6 +20,22 @@
                 <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/materias']">
                         <span class='glyphicon glyphicon-th-list'></span> Manage Data
+                    </a>
+                </li>
+                <account (Login)="onLogin($event)"></account>
+                <li *ngIf="LoggedUser">
+                    <a>
+                        <span class='glyphicon glyphicon-log-in' ></span> Hello, {{LoggedUser}}
+                    </a>
+                </li>
+                <li *ngIf="LoggedUser">
+                    <a href="/Account/LogOut">
+                        <span class='glyphicon glyphicon-log-in'></span> Logout
+                    </a>
+                </li>
+                <li *ngIf="!LoggedUser">
+                    <a href="/Account/LogIn">
+                        <span class='glyphicon glyphicon-log-in'></span> Login
                     </a>
                 </li>
             </ul>

@@ -40,6 +40,10 @@ export class MateriaComponent {
             this.materias = result.json() as Materia[];
             console.log(this.materias.toString());
         });
+        this.selectedMateria = null;
+        this.selectedRow = null;
+        this.isSelected = false;
+
     }
     
 }

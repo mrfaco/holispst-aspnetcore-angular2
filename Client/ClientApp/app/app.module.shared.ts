@@ -9,6 +9,7 @@ import { MateriaComponent } from './components/Materias/materias.component';
 import { CreatorComponent } from './components/creator/creator.component';
 import { UpdaterComponent } from './components/updater/updater.component'
 import { CalculatorComponent } from "./components/calculator/calculator.component";
+import { AccountComponent } from "./components/account/account.component";
 
 
 
@@ -21,7 +22,8 @@ export const sharedConfig: NgModule = {
         MateriaComponent,
         CreatorComponent,
         UpdaterComponent,
-        CalculatorComponent
+        CalculatorComponent,
+        AccountComponent,
     ],
     imports: [
         FormsModule,

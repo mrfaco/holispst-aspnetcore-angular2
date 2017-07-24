@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./navmenu.component.css']
 })
 export class NavMenuComponent {
+    public LoggedUser: string;
+
+    onLogin(event) {
+        this.LoggedUser = event;
+        console.log(event);
+    }
 }
