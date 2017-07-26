@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Client.UsersContext;
+using Microsoft.AspNetCore.Identity;
 
 namespace Client
 {
@@ -96,9 +97,26 @@ namespace Client
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
             });
+            this.SeedUsers(app.ApplicationServices).Wait();
+         }
 
-            
-            
+        private async Task SeedUsers(IServiceProvider services)
+        {
+            using (var scope = services.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var usersManager = services.GetRequiredService<UserManager<HolisUser>>();
+                var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                string adminUserName = "Administrator3";
+                string adminPass = "Facopolo749";
+                var adminUser = await usersManager.FindByNameAsync(adminUserName);
+                if (adminUser == null)
+                {
+                    await usersManager.CreateAsync(new HolisUser { UserName = adminUserName }, adminPass);
+                    var newAdmin = await usersManager.FindByNameAsync(adminUserName);
+                    var adminRole = await rolesManager.CreateAsync(new IdentityRole() { Name = "administrator" });
+                    await usersManager.AddToRoleAsync(newAdmin, "administrator");
+                }
+            }
         }
     }
 }

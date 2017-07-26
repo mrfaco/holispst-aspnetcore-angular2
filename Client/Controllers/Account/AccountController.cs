@@ -1,6 +1,8 @@
 ﻿using Client.UsersContext;
 using Client.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,11 +16,13 @@ namespace Client.Controllers.Account
         private UserManager<HolisUser> _userManager;
         private SignInManager<HolisUser> _signInManager;
         private HolisUser _currentUser;
+        private RoleManager<IdentityRole> _rolesManager;
 
-        public AccountController(UserManager<HolisUser> userManager, SignInManager<HolisUser> signInManager)
+        public AccountController(UserManager<HolisUser> userManager, SignInManager<HolisUser> signInManager, RoleManager<IdentityRole> rolesManager)
         {
             this._userManager = userManager;
             this._signInManager = signInManager;
+            this._rolesManager = rolesManager;
         }
 
         [HttpGet]
@@ -39,7 +43,6 @@ namespace Client.Controllers.Account
                 {
                     return RedirectToAction(nameof(HomeController.Index),"Home");
                 }
-                
             }
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
@@ -75,6 +78,33 @@ namespace Client.Controllers.Account
         {
             var user = await _userManager.GetUserAsync(HttpContext.User);
             this._currentUser = user;
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "administrator")]
+        public IActionResult CreateUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "administrator")]
+        public async Task<IActionResult> CreateUser(UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new HolisUser() { UserName = model.UserName };
+                var create = await _userManager.CreateAsync(user, model.Password);
+                if (create.Succeeded)
+                {
+                    ViewBag.Success = "Added Successfully";
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, $"Failed to create user. Reason: {create.Errors.FirstOrDefault().Description}");
+                }
+            }
+            return View();
         }
     }
 }
