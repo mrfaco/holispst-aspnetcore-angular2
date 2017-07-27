@@ -11,3 +11,16 @@ C:\Users\facundo.osimi\documents\visual studio 2017\Projects\holispst\Holispst\b
 C:\Users\facundo.osimi\documents\visual studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Entities.dll
 C:\Users\facundo.osimi\documents\visual studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\DataAccess.pdb
 C:\Users\facundo.osimi\documents\visual studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Entities.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Holispst.deps.json
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Holispst.runtimeconfig.json
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Holispst.runtimeconfig.dev.json
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Holispst.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Holispst.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\DataAccess.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Entities.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\DataAccess.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\bin\Debug\netcoreapp1.1\Entities.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\obj\Debug\netcoreapp1.1\Holispst.csprojResolveAssemblyReference.cache
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\obj\Debug\netcoreapp1.1\Holispst.AssemblyInfo.cs
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\obj\Debug\netcoreapp1.1\Holispst.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Holispst\obj\Debug\netcoreapp1.1\Holispst.pdb

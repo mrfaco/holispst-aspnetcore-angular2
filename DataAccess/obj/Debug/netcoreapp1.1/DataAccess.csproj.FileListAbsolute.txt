@@ -7,3 +7,12 @@ c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\DataAccess
 c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\DataAccess\bin\Debug\netcoreapp1.1\Entities.pdb
 c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\DataAccess\obj\Debug\netcoreapp1.1\DataAccess.dll
 c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\DataAccess\obj\Debug\netcoreapp1.1\DataAccess.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\bin\Debug\netcoreapp1.1\DataAccess.deps.json
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\bin\Debug\netcoreapp1.1\DataAccess.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\bin\Debug\netcoreapp1.1\DataAccess.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\bin\Debug\netcoreapp1.1\Entities.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\bin\Debug\netcoreapp1.1\Entities.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\obj\Debug\netcoreapp1.1\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\obj\Debug\netcoreapp1.1\DataAccess.AssemblyInfo.cs
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\obj\Debug\netcoreapp1.1\DataAccess.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\DataAccess\obj\Debug\netcoreapp1.1\DataAccess.pdb

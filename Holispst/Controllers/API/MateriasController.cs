@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Holispst.Controllers.API
 {
-    
+    [Authorize]
     public class MateriasController : Controller
     {
         private IMateriasRepository materiasRepository;

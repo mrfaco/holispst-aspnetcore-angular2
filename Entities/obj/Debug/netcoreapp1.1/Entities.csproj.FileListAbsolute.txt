@@ -5,3 +5,10 @@ c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\o
 c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\obj\Debug\netcoreapp1.1\Entities.dll
 c:\Users\facundo.osimi\documents\visual studio 2017\Projects\Holispst\Entities\obj\Debug\netcoreapp1.1\Entities.pdb
 C:\Users\facundo.osimi\documents\visual studio 2017\Projects\holispst\Entities\obj\Debug\netcoreapp1.1\Entities.csprojResolveAssemblyReference.cache
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Entities\bin\Debug\netcoreapp1.1\Entities.deps.json
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Entities\bin\Debug\netcoreapp1.1\Entities.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Entities\bin\Debug\netcoreapp1.1\Entities.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Entities\obj\Debug\netcoreapp1.1\Entities.AssemblyInfo.cs
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Entities\obj\Debug\netcoreapp1.1\Entities.dll
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Entities\obj\Debug\netcoreapp1.1\Entities.pdb
+C:\Users\facun\Documents\Visual Studio 2017\Projects\holispst\Entities\obj\Debug\netcoreapp1.1\Entities.csprojResolveAssemblyReference.cache
