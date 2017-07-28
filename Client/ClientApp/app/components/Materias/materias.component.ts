@@ -8,17 +8,18 @@ import { Http } from '@angular/http';
 
 
 export class MateriaComponent {
+    public BaseUrl: string;
     public materias: Materia[];
     public setClickedRow: Function;
     public selectedRow: -2;
     public selectedMateria: Materia;
     public isSelected = false;
     private http: Http;
-    private apiURL="http://localhost:55075/api/materias";
 
-    constructor(http: Http) {
+    constructor(http: Http, @Inject('ORIGIN_URL') originUrl: string) {
         this.http = http;
-        http.get(this.apiURL).subscribe(result => {
+        this.BaseUrl = originUrl;
+        http.get(originUrl+"/Materias/Materias").subscribe(result => {
             this.materias = result.json() as Materia[];
             console.log(this.materias.toString());
         });
@@ -37,7 +38,7 @@ export class MateriaComponent {
     }
     onUpdated(event) {
         console.log("event received");
-        this.http.get(this.apiURL).subscribe(result => {
+        this.http.get(this.BaseUrl+"/Materias/Materias").subscribe(result => {
             this.materias = result.json() as Materia[];
             console.log(this.materias.toString());
         });

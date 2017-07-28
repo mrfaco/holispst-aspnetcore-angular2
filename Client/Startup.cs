@@ -35,6 +35,8 @@ namespace Client
 
             services.AddDbContext<HolisUsersContext>();
 
+            services.AddSingleton(Configuration);
+
             services.AddMvc();
 
             services.AddIdentity<HolisUser, IdentityRole>()

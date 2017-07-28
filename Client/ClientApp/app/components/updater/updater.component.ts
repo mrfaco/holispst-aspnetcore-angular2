@@ -13,6 +13,7 @@ export class UpdaterComponent {
     public updated = false;
     public _materiaInput: any;
     @Output() onUpdated = new EventEmitter<boolean>();
+    public BaseUrl: string;
 
     @Input()
     set materiaInput(inp: any) {
@@ -23,8 +24,9 @@ export class UpdaterComponent {
         return this._materiaInput;
     }
 
-    constructor(http: Http) {
+    constructor(http: Http, @Inject('ORIGIN_URL') BaseUrl: string) {
         this.http = http;
+        this.BaseUrl = BaseUrl;
     }
 
     updateSelected() {
@@ -99,7 +101,7 @@ export class UpdaterComponent {
     deleteFromApi(id: number) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http.delete("http://holispst.azurewebsites.net/api/materias/"+id,options)
+        return this.http.delete(this.BaseUrl+"/Materias/Delete/"+id,options)
             .map((res: Response) => res.text());
     }
 
@@ -108,7 +110,7 @@ export class UpdaterComponent {
         let options = new RequestOptions({ headers: headers });
         let body = JSON.stringify([mat]);
         console.log(body);
-        return this.http.put('http://holispst.azurewebsites.net/api/materias', body, options)
+        return this.http.put(this.BaseUrl + "/Materias/Update", body, options)
             .map((res: Response) => res.text());
     }
 }

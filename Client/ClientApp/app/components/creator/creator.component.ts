@@ -12,10 +12,12 @@ export class CreatorComponent {
 
     private http: Http;
     public added = false;
+    public BaseUrl: string;
     @Output() onUpdated = new EventEmitter<boolean>();
 
-    constructor(http: Http) {
+    constructor(http: Http, @Inject('ORIGIN_URL') baseUrl:string) {
         this.http = http;
+        this.BaseUrl = baseUrl;
     }
 
     add(formValues) {
@@ -47,7 +49,7 @@ export class CreatorComponent {
         let options = new RequestOptions({ headers: headers });
         let body = JSON.stringify([mat]);
         console.log(body);
-        return this.http.post('http://holispst.azurewebsites.net/api/materias', body, options)
+        return this.http.post(this.BaseUrl+"/Materias/Create", body, options)
             .map((res: Response) => res.text());
     }
 }

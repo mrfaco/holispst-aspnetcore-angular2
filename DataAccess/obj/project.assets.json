@@ -8651,10 +8651,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\facundo.osimi\\Documents\\Visual Studio 2017\\Projects\\Holispst\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\facundo.osimi\\Documents\\Visual Studio 2017\\Projects\\Holispst\\DataAccess\\DataAccess.csproj",
-      "outputPath": "C:\\Users\\facundo.osimi\\Documents\\Visual Studio 2017\\Projects\\Holispst\\DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\DataAccess\\DataAccess.csproj",
+      "outputPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -8662,8 +8662,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\facundo.osimi\\Documents\\Visual Studio 2017\\Projects\\Holispst\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\facundo.osimi\\Documents\\Visual Studio 2017\\Projects\\Holispst\\Entities\\Entities.csproj"
+            "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Entities\\Entities.csproj"
             }
           }
         }
