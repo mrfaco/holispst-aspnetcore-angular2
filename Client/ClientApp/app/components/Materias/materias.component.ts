@@ -14,10 +14,11 @@ export class MateriaComponent {
     public selectedMateria: Materia;
     public isSelected = false;
     private http: Http;
+    private apiURL="http://localhost:55075/api/materias";
 
     constructor(http: Http) {
         this.http = http;
-        http.get("http://holispst.azurewebsites.net/api/materias").subscribe(result => {
+        http.get(this.apiURL).subscribe(result => {
             this.materias = result.json() as Materia[];
             console.log(this.materias.toString());
         });
@@ -36,7 +37,7 @@ export class MateriaComponent {
     }
     onUpdated(event) {
         console.log("event received");
-        this.http.get("http://holispst.azurewebsites.net/api/materias").subscribe(result => {
+        this.http.get(this.apiURL).subscribe(result => {
             this.materias = result.json() as Materia[];
             console.log(this.materias.toString());
         });
