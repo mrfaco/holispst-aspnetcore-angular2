@@ -37,6 +37,8 @@ namespace Client
 
             services.AddSingleton(Configuration);
 
+            services.AddMemoryCache();
+
             services.AddMvc();
 
             services.AddIdentity<HolisUser, IdentityRole>()

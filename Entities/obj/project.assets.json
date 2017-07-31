@@ -8417,10 +8417,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Entities\\Entities.csproj",
-      "outputPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Entities\\obj\\",
+      "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\Entities\\Entities.csproj",
+      "outputPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

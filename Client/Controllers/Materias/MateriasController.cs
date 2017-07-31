@@ -1,6 +1,9 @@
-﻿using Client.Utils;
+﻿using Client.UsersContext;
+using Client.Utils;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
@@ -8,45 +11,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Client.Controllers.Materias
 {
-    [Authorize]
     public class MateriasController : Controller
     {
-        private Auth _token;
         private IConfigurationRoot _config;
+        private IMemoryCache _memoryCache;
 
-        public MateriasController(IConfigurationRoot config)
+        public MateriasController(IConfigurationRoot config, IMemoryCache memoryCache)
         {
             this._config = config;
-            GetAuthenticationToken().Wait();
+            this._memoryCache = memoryCache;
         }
-
-        private async Task GetAuthenticationToken()
-        {
-            using (HttpClient httpClient = new HttpClient())
-            {
-                httpClient.BaseAddress = new Uri(_config["ApiConfig:ApiBaseAddress"]);
-                var nvc = new List<KeyValuePair<string, string>>();
-                nvc.Add(new KeyValuePair<string, string>("username", "TEST"));
-                nvc.Add(new KeyValuePair<string, string>("password", "TEST123"));
-
-                var response = await httpClient.PostAsync("/token", new FormUrlEncodedContent(nvc));
-
-                var data = await response.Content.ReadAsStringAsync();
-                this._token = JsonConvert.DeserializeObject<Auth>(data);
-            }
-        }
+        
         [HttpGet]
         public async Task<IActionResult> Materias()
         {
+            var cached = string.Empty;
+            _memoryCache.TryGetValue("token", out cached);
+            if (!CheckIfIsLocal() || cached == string.Empty)
+            {
+                return BadRequest();
+            }
             using (HttpClient httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri(_config["ApiConfig:ApiBaseAddress"]);
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token.access_token);
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",cached);
                 var response = httpClient.GetAsync(_config["ApiConfig:MateriasAddress"]);
                 var json = await response.Result.Content.ReadAsStringAsync();
                 return Ok(json);
@@ -55,23 +49,36 @@ namespace Client.Controllers.Materias
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] List<Materia> model)
         {
+            var cached = string.Empty;
+            _memoryCache.TryGetValue("token", out cached);
+            if (!CheckIfIsLocal() || cached == string.Empty)
+            {
+                return BadRequest();
+            }
             using (HttpClient httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri(_config["ApiConfig:ApiBaseAddress"]);
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token.access_token);
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", cached);
                 var content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
                 var response = await httpClient.PostAsync(_config["ApiConfig:MateriasAddress"], content);
                 var json = await response.Content.ReadAsStringAsync();
                 return Ok(json);
             }
         }
+
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] List<Materia> model)
         {
+            var cached = string.Empty;
+            _memoryCache.TryGetValue("token", out cached);
+            if (!CheckIfIsLocal() || cached == string.Empty)
+            {
+                return BadRequest();
+            }
             using (HttpClient httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri(_config["ApiConfig:ApiBaseAddress"]);
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token.access_token);
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", cached);
                 var content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
                 var response = await httpClient.PutAsync(_config["ApiConfig:MateriasAddress"], content);
                 var json = await response.Content.ReadAsStringAsync();
@@ -81,14 +88,39 @@ namespace Client.Controllers.Materias
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
+            var cached = string.Empty;
+            _memoryCache.TryGetValue("token", out cached);
+            if (!CheckIfIsLocal() || cached == string.Empty)
+            {
+                return BadRequest();
+            }
             using (HttpClient httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri(_config["ApiConfig:ApiBaseAddress"]);
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token.access_token);
-                var response = await httpClient.DeleteAsync(_config["ApiConfig:MateriasAddress"]+$"/{id}");
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", cached);
+                var response = await httpClient.DeleteAsync(_config["ApiConfig:MateriasAddress"] + string.Format($"/{id}"));
                 var json = await response.Content.ReadAsStringAsync();
                 return Ok(json);
             }
+        }
+        private bool CheckIfIsAuthenticated()
+        {
+            var cached = string.Empty;
+            _memoryCache.TryGetValue("token", out cached);
+            if (cached != string.Empty)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool CheckIfIsLocal()
+        {
+            if (Request.IsLocal())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

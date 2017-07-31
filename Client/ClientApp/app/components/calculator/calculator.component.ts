@@ -16,9 +16,9 @@ export class CalculatorComponent {
     public selectedMaterias = [];
     public price: number;
 
-    constructor(http: Http) {
+    constructor(http: Http, @Inject('ORIGIN_URL') baseUrl: string) {
         this.http = http;
-        http.get("http://holispst.azurewebsites.net/api/materias").subscribe(result => {
+        http.get(baseUrl+"/Materias/Materias").subscribe(result => {
             this.materias = result.json() as Materia[];
             console.log(this.materias.toString());
         });

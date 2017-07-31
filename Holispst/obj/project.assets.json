@@ -10518,10 +10518,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Holispst\\Holispst.csproj",
+      "projectUniqueName": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\Holispst\\Holispst.csproj",
       "projectName": "Holispst",
-      "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Holispst\\Holispst.csproj",
-      "outputPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Holispst\\obj\\",
+      "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\Holispst\\Holispst.csproj",
+      "outputPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\Holispst\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -10529,11 +10529,11 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\holispst\\Entities\\Entities.csproj"
+            "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\facundo.osimi\\documents\\visual studio 2017\\Projects\\Holispst\\Entities\\Entities.csproj"
             }
           }
         }
