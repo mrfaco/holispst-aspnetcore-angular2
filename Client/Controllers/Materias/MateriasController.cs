@@ -33,7 +33,7 @@ namespace Client.Controllers.Materias
         {
             var cached = string.Empty;
             _memoryCache.TryGetValue("token", out cached);
-            if (!CheckIfIsLocal() || cached == string.Empty)
+            if (cached == string.Empty)
             {
                 return BadRequest();
             }
@@ -51,7 +51,7 @@ namespace Client.Controllers.Materias
         {
             var cached = string.Empty;
             _memoryCache.TryGetValue("token", out cached);
-            if (!CheckIfIsLocal() || cached == string.Empty)
+            if (cached == string.Empty)
             {
                 return BadRequest();
             }
@@ -71,7 +71,7 @@ namespace Client.Controllers.Materias
         {
             var cached = string.Empty;
             _memoryCache.TryGetValue("token", out cached);
-            if (!CheckIfIsLocal() || cached == string.Empty)
+            if (cached == string.Empty)
             {
                 return BadRequest();
             }
@@ -90,7 +90,7 @@ namespace Client.Controllers.Materias
         {
             var cached = string.Empty;
             _memoryCache.TryGetValue("token", out cached);
-            if (!CheckIfIsLocal() || cached == string.Empty)
+            if (cached == string.Empty)
             {
                 return BadRequest();
             }
